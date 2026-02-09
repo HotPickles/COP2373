@@ -1,7 +1,7 @@
 def ticket_application(tickets_remaining, buyer_counter):
     
     #inputted requested ticket amount aassigned to an unverified variable
-    purchase_check = int(input('How many tickets would you like to purchase? (max 4)'))
+    purchase_check = int(input('Please enter how many tickets you wish to purchase. You may purchase up to four tickets.'))
     
     #if the purchase is inelibigible than this will recognize it, find the problem, message the user and restart the process
     if purchase_check <= 0 or purchase_check >= 5 or purchase_check > tickets_remaining:
@@ -49,3 +49,4 @@ def main():
 
 
 main()
+
