@@ -1,4 +1,4 @@
-def ticket_application(tickets_remaining, buyer_counter):
+def ticket_application(tickets_remaining, num_customers):
     
     #inputted requested ticket amount aassigned to an unverified variable
     purchase_check = int(input('Please enter how many tickets you wish to purchase. You may purchase up to four tickets.'))
@@ -9,43 +9,43 @@ def ticket_application(tickets_remaining, buyer_counter):
         #for if there is not enough tickets
         if purchase_check > tickets_remaining:
             print('We only have ' + str(tickets_remaining) + ' tickets left.')
-            return(tickets_remaining, buyer_counter)
+            return(tickets_remaining, num_customers)
         
         #for if the user says they want 0 or negative tickets
         elif purchase_check <= 0:
             print('bye')
-            return(tickets_remaining, buyer_counter)
+            return(tickets_remaining, num_customers)
         
         #for if the user says they want more than the alloted 4 tickets
         elif purchase_check >= 5:
             print('You may only buy a maximum of 4 tickets.')
-            return(tickets_remaining, buyer_counter)
+            return(tickets_remaining, num_customers)
     
     #after purchase eligibility is verified a confirmed purchase veriable recieves the value
     purchase = purchase_check
     
     #records the tickets remaining and number of buyers
     tickets_remaining = tickets_remaining - purchase
-    buyer_counter = buyer_counter + 1
+    num_customers = num_customers + 1
     
     #information for the user after they successfully purchased tickets
     print('Here are your ' + str(purchase) + ' tickets!')
     print('There are ' + str(tickets_remaining) + ' tickets left.')
     
     #return the tickets remaining and buyer accumulator for the next cycle
-    return(tickets_remaining, buyer_counter)
+    return(tickets_remaining, num_customers)
 
 def main():
     
     #initialize buyer counter and tickets remaining outside of the while loops
-    buyer_counter = 0
+    num_customers = 0
     tickets_remaining = 10
     #while loop to sell the tickets until there are none left
     while tickets_remaining > 0:
-        tickets_remaining, buyer_counter = ticket_application(tickets_remaining, buyer_counter)
+        tickets_remaining, num_customers = ticket_application(tickets_remaining, num_customers)
     #messages once the tickets are sold out and the loops have ended
     print('All tickets are sold out for now.')
-    print(str(buyer_counter) + ' People bought tickets.')
+    print(str(num_customers) + ' People bought tickets.')
 
 
 main()
