@@ -39,12 +39,13 @@ def main():
     
     #initialize buyer counter and tickets remaining outside of the while loops
     buyer_counter = 0
-    tickets_remaining = 20
+    tickets_remaining = 10
     #while loop to sell the tickets until there are none left
     while tickets_remaining > 0:
         tickets_remaining, buyer_counter = ticket_application(tickets_remaining, buyer_counter)
     #messages once the tickets are sold out and the loops have ended
     print('All tickets are sold out for now.')
     print(str(buyer_counter) + ' People bought tickets.')
+
 
 main()
